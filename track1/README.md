@@ -7,6 +7,7 @@ We provide individual RGB and SAR images, as well as 4-channel images (.MERGE) c
 All the images are in size of 512x512.
 The data format follows the MS COCO format, and the annotation is in json format.
 The topology of the dataset directory is as follows：
+
     ```
     DFC_Track_1
     ├── annotations
@@ -61,7 +62,7 @@ We use MMDetection to test the baseline model performance.
 The submission should be a json format file.
 We provide demos of json files.
 If you want to quickly generate commit results in this format, you can run the following command from mmdetection.
-'''
+```
 # out: results.bbox.json and results.segm.json
 python tools/test.py $CONFIG $checkpoint --format-only --eval-options "jsonfile_prefix=./results"
 python tools/test.py \
@@ -69,4 +70,4 @@ python tools/test.py \
        checkpoint/mask_rcnn_r50_fpn_1x_coco_20200205-d4b0c5d6.pth \
        --format-only \
        --options "jsonfile_prefix=./results"
-'''
+```
