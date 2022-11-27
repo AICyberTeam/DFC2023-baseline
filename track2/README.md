@@ -50,6 +50,7 @@ The topology of the dataset directory is as follows：
 ## Submission Format
 The documents submitted should be a folder. 
 The topology of the submitted floder directory is as follows：
+
     ```
     DFC_Track_2_submit
     ├── roof_fine_results.json
