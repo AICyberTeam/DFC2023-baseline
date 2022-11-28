@@ -60,17 +60,17 @@ We choose the classical mask rcnn algorithm as the contest baseline model. Among
 We use MMDetection to test the baseline model performance.
 The performance report of Mask R-CNN on the fine-grained building instance segmentation and roof classification is as follows:
 
-| Model      | Modality | mAP | mAP_50 |
-| ---------- | -------- | --- | ------ |
-| Mask R-CNN | RGB      | 13.2|  22.9  |
-| Mask R-CNN | RGB+SAR  | 7.9 |  15.4  |
+| Model      | Modality |  mAP  |  mAP_50  |
+| ---------- | -------- | :---: | :------: |
+| Mask R-CNN | RGB      |  13.2 |   22.9   |
+| Mask R-CNN | RGB+SAR  |  7.9  |   15.4   |
 
 The performance report of Mask R-CNN on the fine-grained building instance segmentation (without classification) is as follows:
 
-| Model      | Modality | mAP | mAP_50 |
-| ---------- | -------- | --- | ------ |
-| Mask R-CNN | RGB      | 28.8|  59.9  |
-| Mask R-CNN | RGB+SAR  | 21.8|  49.6  |
+| Model      | Modality |  mAP  |  mAP_50  |
+| ---------- | -------- | :---: | :------: |
+| Mask R-CNN | RGB      |  28.8 |   59.9   |
+| Mask R-CNN | RGB+SAR  |  21.8 |   49.6   |
 
 ## Submission Format
 The submission should be a json format file.
