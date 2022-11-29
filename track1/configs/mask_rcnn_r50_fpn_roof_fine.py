@@ -71,8 +71,8 @@ test_pipeline = [
 ]
 
 data = dict(
-    samples_per_gpu=4,
-    workers_per_gpu=4,
+    samples_per_gpu=2,
+    workers_per_gpu=2,
     train=dict(
         type='ClassBalancedDataset',
         oversample_thr=0.3,
@@ -105,11 +105,10 @@ lr_config = dict(
     policy='step',
     warmup='linear',
     warmup_iters=500,
-    # warmup_iters=1,
     warmup_ratio=0.001,
     step=[24, 33])
 runner = dict(type='EpochBasedRunner', max_epochs=36)
-# auto_scale_lr = dict(enable=True, base_batch_size=16)
+auto_scale_lr = dict(enable=True, base_batch_size=16)
 checkpoint_config = dict(interval=1)
 log_config = dict(
     interval=50,
