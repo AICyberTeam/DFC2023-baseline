@@ -40,7 +40,7 @@ img_norm_cfg = dict(
     mean=[0., 0., 0., 0.], std=[255., 255., 255., 255.], to_rgb=False)
 
 dataset_type = 'CocoDataset'
-data_root = 'data/dfc_root'
+data_root = 'data/dfc_root/'
 SIZE = [(512, 512), (864, 864)]
 flip_ratio = 0.5
 train_pipeline = [
