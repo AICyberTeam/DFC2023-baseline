@@ -6,7 +6,7 @@ This track has a large number of neighboring building clusters, which challenges
 We provide individual RGB images in 3-channel tif format.
 All the images are in size of 512x512.
 In the instance segmentation sub-task, the data format follows the MS COCO format, and the annotation uses the json format. 
-In the height prediction sub-task, the data annotation adopts the DSM ground true formed by the pixel by pixel elevation value corresponding to the RGB images, 
+In the height prediction sub-task, the data annotation adopts the height ground true formed by the pixel by pixel elevation value corresponding to the RGB images, 
 and the data uses tif format.
 The topology of the dataset directory is as follows：
 
@@ -22,27 +22,27 @@ The topology of the dataset directory is as follows：
     │   │   └── ...
     │   │   └── P0009_RGB.tif
     │   └── ndsm
-    │       ├── P0001_DSM.tif
+    │       ├── P0001_nDSM.tif
     │       └── ...
-    │       └── P0009_DSM.tif
+    │       └── P0009_nDSM.tif
     ├── val
     │   └── rgb
     │   │   ├── P0011_RGB.tif
     │   │   └── ...
     │   │   └── P0019_RGB.tif
     │   └── ndsm
-    │       ├── P0011_DSM.tif
+    │       ├── P0011_nDSM.tif
     │       └── ...
-    │       └── P0019_DSM.tif
+    │       └── P0019_nDSM.tif
     └── test
         └── rgb
         │   ├── P0021_RGB.tif
         │   └── ...
         │   └── P0029_RGB.tif
         └── ndsm
-            ├── P0021_DSM.tif
+            ├── P0021_nDSM.tif
             └── ...
-            └── P0029_DSM.tif
+            └── P0029_nDSM.tif
     ```
 ## Baselines
 
