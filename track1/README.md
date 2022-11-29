@@ -73,6 +73,7 @@ The performance report of Mask R-CNN on the fine-grained building instance segme
 Since we use pre-trained weights in RGB modality, while four-channel images cannot use pre-trained weights directly.
 Therefore, the former has higher scores than the latter.
 Simple four-channel concatenation does not make better use of the pre-training weights, and some multimodal late fusion methods can be expected to improve the performance.
+All the training configs are provided in [configs](configs)
 
 ## Submission Format
 The submission should be a json format file.
