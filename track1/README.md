@@ -13,8 +13,6 @@ The topology of the dataset directory is as follows：
     DFC_Track_1
     ├── annotations
     │   └── roof_fine_train_merge.json
-    │   └── roof_fine_val_merge.json
-    │   └── roof_fine_test_merge.json
     ├── train
     │   └── rgb
     │   │   ├── P0001_RGB.tif
