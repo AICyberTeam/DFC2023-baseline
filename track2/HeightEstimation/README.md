@@ -1,4 +1,4 @@
-# Baseline for DSM Predict
+# Baseline for Height Prediction
 
 ## Overview
 You can train or test the baseline network on DFC2023 dataset.
