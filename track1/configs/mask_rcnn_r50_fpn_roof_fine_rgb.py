@@ -13,15 +13,12 @@ CLASSES = (
     "hipped_roof_v1", 
     "hipped_roof_v2", 
     "mansard_roof", 
-    "pinnacle_roof", 
+    "pyramid_roof", 
     "arched_roof",
     "dome",
     "other"
 )
 model = dict(
-    backbone=dict(
-        # frozen_stages=1,
-	    init_cfg=dict(checkpoint='/workspace/pretrained_models/resnet50-19c8e357.pth')),
     roi_head=dict(
         bbox_head=dict(
             num_classes=len(CLASSES)),
@@ -34,10 +31,7 @@ model = dict(
             ratios=[0.5, 1.0, 2.0],
             strides=[4, 8, 16, 32, 64])),
     test_cfg=dict(
-        rcnn=dict(
-            # nms=dict(type='nms', iou_threshold=0.6)),
-            max_per_img=300,
-        ),
+        rcnn=dict(max_per_img=300),
     )
 )
 
@@ -45,7 +39,7 @@ img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True)
 
 dataset_type = 'CocoDataset'
-data_root = '/workspace/dataset/dfc_v0.1/'
+data_root = 'data/dfc_root/'
 SIZE = [(512, 512), (864, 864)]
 # SIZE=[(512, 512)]
 flip_ratio = 0.5
