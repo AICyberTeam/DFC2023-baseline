@@ -8,10 +8,6 @@ CLASSES = (
     'building',
 )
 model = dict(
-    backbone=dict(
-        # in_channels=4,
-        # frozen_stages=1,
-	    init_cfg=dict(checkpoint='/workspace/pretrained_models/resnet50-19c8e357.pth')),
     roi_head=dict(
         bbox_head=dict(
             num_classes=len(CLASSES)),
@@ -24,10 +20,7 @@ model = dict(
             ratios=[0.5, 1.0, 2.0],
             strides=[4, 8, 16, 32, 64])),
     test_cfg=dict(
-        rcnn=dict(
-            # nms=dict(type='nms', iou_threshold=0.6)),
-            max_per_img=300,
-        ),
+        rcnn=dict(max_per_img=300),
     )
 )
 
@@ -35,9 +28,8 @@ img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True)
 
 dataset_type = 'CocoDataset'
-data_root = '/workspace/dataset/dfc_v0.1/'
+data_root = 'data/dfc_root/'
 SIZE = [(512, 512), (864, 864)]
-# SIZE=[(512, 512)]
 flip_ratio = 0.5
 train_pipeline = [
     dict(type='LoadImageFromFile'),
@@ -67,8 +59,8 @@ test_pipeline = [
 ]
 
 data = dict(
-    samples_per_gpu=4,
-    workers_per_gpu=4,
+    samples_per_gpu=2,
+    workers_per_gpu=2,
     train=dict(
         type='ClassBalancedDataset',
         oversample_thr=0.3,
@@ -101,11 +93,10 @@ lr_config = dict(
     policy='step',
     warmup='linear',
     warmup_iters=500,
-    # warmup_iters=1,
     warmup_ratio=0.001,
     step=[24, 33])
 runner = dict(type='EpochBasedRunner', max_epochs=36)
-# auto_scale_lr = dict(enable=True, base_batch_size=16)
+auto_scale_lr = dict(enable=True, base_batch_size=16)
 checkpoint_config = dict(interval=1)
 log_config = dict(
     interval=50,
