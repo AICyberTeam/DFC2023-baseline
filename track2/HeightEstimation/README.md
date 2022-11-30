@@ -18,7 +18,7 @@ You can train or test the baseline network on DFC2023 dataset.
   python train.py
   ```
 
-- **Stage3** *Test*
+- **Stage2** *Test*
 
   Test the baseline network.
   ```
