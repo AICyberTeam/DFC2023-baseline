@@ -80,11 +80,11 @@ The submission should be a json format file.
 We provide demos of json files.
 If you want to quickly generate commit results in this format, you can run the following command from mmdetection.
 ```
-# out: results.bbox.json and results.segm.json
+# out: results.bbox.json and results.segm.json (required)
 python tools/test.py $CONFIG $checkpoint --format-only --eval-options "jsonfile_prefix=./results"
 python tools/test.py \
        configs/mask_rcnn/mask_rcnn_r50_fpn_1x_coco.py \
        checkpoint/mask_rcnn_r50_fpn_1x_coco_20200205-d4b0c5d6.pth \
        --format-only \
-       --options "jsonfile_prefix=./results"
+       --eval-options "jsonfile_prefix=./results"
 ```
