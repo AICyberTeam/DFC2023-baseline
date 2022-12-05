@@ -79,11 +79,10 @@ All the training configs are provided in [configs](configs).
 The submission should be a json format file which consisting of a list with all detected objects.
 Each element in the list is a python dictionary object containing four keys: "image_id", "bbox", "category_id" and "segmentation".
 The formatl of values in the dictionary is consistant with COCO format.
-We provide the one-to-one relationship between the test image name and image_id in json format.
-We provide demos of json files.
+We provide the one-to-one relationship between the test image name and image_id in json format, so you can use is to inference the results.
 If you want to quickly generate commit results in this format, you can run the following command from mmdetection.
 ```
-# out: results.bbox.json and results.segm.json (required)
+# out: results.bbox.json and results.segm.json (only segm is required)
 python tools/test.py $CONFIG $checkpoint --format-only --eval-options "jsonfile_prefix=./results"
 python tools/test.py \
        configs/mask_rcnn/mask_rcnn_r50_fpn_1x_coco.py \
@@ -91,3 +90,4 @@ python tools/test.py \
        --format-only \
        --eval-options "jsonfile_prefix=./results"
 ```
+The json results of baselines can be referenced in .
