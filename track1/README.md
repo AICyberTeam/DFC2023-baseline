@@ -78,7 +78,7 @@ All the training configs are provided in [configs](configs).
 ## Submission Format
 The submission should be a json format file which consisting of a list with all detected objects.
 Each element in the list is a python dictionary object containing four keys: "image_id", "bbox", "category_id" and "segmentation".
-The formatl of values in the dictionary is consistant with COCO format.
+The format of values in the dictionary is consistant with COCO format.
 We provide the one-to-one relationship between the test image name and image_id in json format, so you can use is to inference the results.
 If you want to quickly generate commit results in this format, you can run the following command from mmdetection.
 ```
