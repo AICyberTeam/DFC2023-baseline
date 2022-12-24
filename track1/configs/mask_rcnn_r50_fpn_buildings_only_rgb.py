@@ -14,11 +14,6 @@ model = dict(
         mask_head=dict(
             num_classes=len(CLASSES))
     ),
-    rpn_head=dict(
-        anchor_generator=dict(
-            scales=[2],
-            ratios=[0.5, 1.0, 2.0],
-            strides=[4, 8, 16, 32, 64])),
     test_cfg=dict(
         rcnn=dict(max_per_img=300),
     )
@@ -80,7 +75,7 @@ data = dict(
         classes=CLASSES),
     test=dict(
         type=dataset_type,
-        ann_file=data_root + 'annotations/buildings_only_test_rgb.json',
+        ann_file=data_root + 'image_id/image_id_test.json',
         img_prefix=data_root + 'test/rgb/',
         pipeline=test_pipeline,
         classes=CLASSES))
