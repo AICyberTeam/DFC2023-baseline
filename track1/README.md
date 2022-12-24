@@ -6,9 +6,9 @@ This track has a large number of neighboring building clusters, which challenges
 We provide individual RGB and SAR (Synthetic Aperture Radar) remote sensing images.
 For better use of multi-modal data, we provide a python [script](make_merge.py) to generate 4-channel images concatenated in the channel dimension, in 4-channel (R,G,B,SAR) tif format.
 You can run the following command to generate the merge direcory:
-'''
+```
 python ./make_merge.py $DATASET_ROOT
-'''
+```
 
 All the images are in size of 512x512.
 The data format follows the MS COCO format, and the annotation is in json format.
