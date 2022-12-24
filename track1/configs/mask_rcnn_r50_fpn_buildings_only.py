@@ -15,11 +15,6 @@ model = dict(
         mask_head=dict(
             num_classes=len(CLASSES))
     ),
-    rpn_head=dict(
-        anchor_generator=dict(
-            scales=[2],
-            ratios=[0.5, 1.0, 2.0],
-            strides=[4, 8, 16, 32, 64])),
     test_cfg=dict(
         rcnn=dict(max_per_img=300),
     )
@@ -29,7 +24,7 @@ img_norm_cfg = dict(
     mean=[0., 0., 0., 0.], std=[255., 255., 255., 255.], to_rgb=False)
 
 dataset_type = 'CocoDataset'
-data_root = '/workspace/dataset/dfc_v0.1/'
+data_root = '/workspace/dataset/dfc2023_track1/'
 SIZE = [(512, 512), (864, 864)]
 flip_ratio = 0.5
 train_pipeline = [
@@ -67,7 +62,7 @@ data = dict(
         oversample_thr=0.3,
         dataset=dict(
         type=dataset_type,
-        ann_file=data_root + 'annotations/buildings_only_train_merge.json',
+        ann_file=data_root + 'annotations/buildings_only_train.json',
         img_prefix=data_root + 'train/merge/',
         pipeline=train_pipeline,
         classes=CLASSES
@@ -75,13 +70,13 @@ data = dict(
     ),
     val=dict(
         type=dataset_type,
-        ann_file=data_root + 'annotations/buildings_only_val_merge.json',
+        ann_file=data_root + 'annotations/buildings_only_val.json',
         img_prefix=data_root + 'val/merge/',
         pipeline=test_pipeline,
         classes=CLASSES),
     test=dict(
         type=dataset_type,
-        ann_file=data_root + 'annotations/buildings_only_test_merge.json',
+        ann_file=data_root + 'image_id/image_id_test.json',
         img_prefix=data_root + 'test/merge/',
         pipeline=test_pipeline,
         classes=CLASSES))
