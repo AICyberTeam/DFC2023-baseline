@@ -17,46 +17,46 @@ The topology of the dataset directory is as follows：
     ```
     DFC_Track_1
     ├── annotations
-    │   └── roof_fine_train_merge.json
+    │   └── roof_fine_train.json
     ├── train
     │   └── rgb
-    │   │   ├── P0001_RGB.tif
+    │   │   ├── P0001.tif
     │   │   └── ...
-    │   │   └── P0009_RGB.tif
+    │   │   └── P0009.tif
     │   └── sar
-    │   │   ├── P0001_SAR.tif
+    │   │   ├── P0001.tif
     │   │   └── ...
-    │   │   └── P0009_SAR.tif
+    │   │   └── P0009.tif
     │   └── merge
-    │       ├── P0001_MERGE.tif
+    │       ├── P0001.tif
     │       └── ...
-    │       └── P0009_MERGE.tif
+    │       └── P0009.tif
     ├── val
     │   └── rgb
-    │   │   ├── P0011_RGB.tif
+    │   │   ├── P0011.tif
     │   │   └── ...
-    │   │   └── P0019_RGB.tif
+    │   │   └── P0019.tif
     │   └── sar
-    │   │   ├── P0011_SAR.tif
+    │   │   ├── P0011.tif
     │   │   └── ...
-    │   │   └── P0019_SAR.tif
+    │   │   └── P0019.tif
     │   └── merge
-    │       ├── P0011_MERGE.tif
+    │       ├── P0011.tif
     │       └── ...
-    │       └── P0019_MERGE.tif
+    │       └── P0019.tif
     └── test
         └── rgb
-        │   ├── P0021_RGB.tif
+        │   ├── P0021.tif
         │   └── ...
-        │   └── P0029_RGB.tif
+        │   └── P0029.tif
         └── sar
-        │   ├── P0021_SAR.tif
+        │   ├── P0021.tif
         │   └── ...
-        │   └── P0029_SAR.tif
+        │   └── P0029.tif
         └── merge
-            ├── P0021_MERGE.tif
+            ├── P0021.tif
             └── ...
-            └── P0029_MERGE.tif
+            └── P0029.tif
     ```
 ## Baselines
 We choose the classical mask rcnn algorithm as the contest baseline model. Among the input image modalities are RGB and SAR.
