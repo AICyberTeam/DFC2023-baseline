@@ -66,7 +66,7 @@ The performance report of Mask R-CNN on the building instance segmentation and r
 | Model      | Modality |  mAP  |  mAP_50  |
 | ---------- | -------- | :---: | :------: |
 | Mask R-CNN | RGB      |  13.8 |   23.5   |
-| Mask R-CNN | RGB+SAR  |  7.9  |   15.4   |
+| Mask R-CNN | RGB+SAR  |  8.4  |   16.0   |
 
 The performance report of Mask R-CNN on the building instance segmentation (without classification) is as follows:
 
