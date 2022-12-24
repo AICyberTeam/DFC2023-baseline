@@ -3,7 +3,8 @@
 Track 1 is an building instance segmentation task that focusing on detecting individual buildings and fine-grained classification of building roofs in remote sensing images.
 This track has a large number of neighboring building clusters, which challenges the participants' ability to involve the algorithmic process.
 ## Dataset Format
-We provide individual RGB and SAR (Synthetic Aperture Radar) remote sensing images, as well as 4-channel images (.MERGE) concatenated in the channel dimension, in 4-channel (R,G,B,SAR) tif format.
+We provide individual RGB and SAR (Synthetic Aperture Radar) remote sensing images.
+For better use of multi-modal data, we provide a python script to generate 4-channel images concatenated in the channel dimension, in 4-channel (R,G,B,SAR) tif format.
 
 All the images are in size of 512x512.
 The data format follows the MS COCO format, and the annotation is in json format.
