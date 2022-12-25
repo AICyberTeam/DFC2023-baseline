@@ -95,4 +95,3 @@ python tools/test.py \
        --format-only \
        --eval-options "jsonfile_prefix=./results"
 ```
-The json results of baselines can be referenced in .
