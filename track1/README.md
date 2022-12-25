@@ -65,15 +65,15 @@ The performance report of Mask R-CNN on the test set of track 1 (fine-grained cl
 
 | Model      | Modality |  mAP  |  mAP_50  |
 | ---------- | -------- | :---: | :------: |
-| Mask R-CNN | RGB      |  13.8 |   23.5   |
-| Mask R-CNN | RGB+SAR  |  8.4  |   16.0   |
+| Mask R-CNN | RGB      |  16.3 |   28.1   |
+| Mask R-CNN | RGB+SAR  |  10.7 |   19.9   |
 
 The performance report of Mask R-CNN on the test set of track 2 (building instance segmentation) is as follows:
 
 | Model      | Modality |  mAP  |  mAP_50  |
 | ---------- | -------- | :---: | :------: |
-| Mask R-CNN | RGB      |  24.7 |   51.9   |
-| Mask R-CNN | RGB+SAR  |  19.4 |   44.7   |
+| Mask R-CNN | RGB      |  22.8 |   49.1   |
+| Mask R-CNN | RGB+SAR  |  18.6 |   43.6   |
 
 Since we use pre-trained weights in RGB modality, four-channel images can not use pre-trained weights directly.
 Therefore, the former has higher scores than the latter.
