@@ -88,7 +88,7 @@ We provide the one-to-one relationship between the test image name and image_id 
 If you want to quickly generate commit results in this format, you can run the following command from mmdetection.
 ```
 # out: results.bbox.json and results.segm.json (only segm is required)
-python tools/test.py $CONFIG $checkpoint --format-only --eval-options "jsonfile_prefix=./results"
+python tools/test.py $CONFIG $checkpoint --format-only --eval-options "jsonfile_prefix=$SAVE_PATH"
 python tools/test.py \
        configs/mask_rcnn_roof_fine.py \
        checkpoint/mask_rcnn_r50_fpn_roof_fine/latest.pth \
