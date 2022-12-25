@@ -61,14 +61,14 @@ The topology of the dataset directory is as follows：
 ## Baselines
 We choose the classical mask rcnn algorithm as the contest baseline model. Among the input image modalities are RGB and SAR.
 We use [MMDetection](https://github.com/open-mmlab/mmdetection) (version 2.25.1) to test the baseline model performance. \
-The performance report of Mask R-CNN on the test set of track 1 (fine-grained classfication and instance segmentation) is as follows:
+The performance report of Mask R-CNN on the validation set of track 1 (fine-grained classfication and instance segmentation) is as follows:
 
 | Model      | Modality |  mAP  |  mAP_50  |
 | ---------- | -------- | :---: | :------: |
 | Mask R-CNN | RGB      |  16.3 |   28.1   |
 | Mask R-CNN | RGB+SAR  |  10.7 |   19.9   |
 
-The performance report of Mask R-CNN on the test set of track 2 (building instance segmentation) is as follows:
+The performance report of Mask R-CNN on the validation set of track 2 (building instance segmentation) is as follows:
 
 | Model      | Modality |  mAP  |  mAP_50  |
 | ---------- | -------- | :---: | :------: |
