@@ -13,36 +13,48 @@ The topology of the dataset directory is as follows：
     ```
     DFC_Track_2
     ├── annotations
-    │   └── roof_fine_train.json
-    │   └── roof_fine_val.json
-    │   └── roof_fine_test.json
+    │   └── buildings_only_train.json
+    │   └── buildings_only_val.json
+    │   └── buildings_only_test.json
     ├── train
     │   └── rgb
     │   │   ├── P0001_RGB.tif
     │   │   └── ...
     │   │   └── P0009_RGB.tif
-    │   └── ndsm
-    │       ├── P0001_nDSM.tif
+    │   └── sar
+    │   │   ├── P0001_RGB.tif
+    │   │   └── ...
+    │   │   └── P0009_RGB.tif
+    │   └── height
+    │       ├── P0001_height.tif
     │       └── ...
-    │       └── P0009_nDSM.tif
+    │       └── P0009_height.tif
     ├── val
     │   └── rgb
-    │   │   ├── P0011_RGB.tif
+    │   │   ├── P0011.tif
     │   │   └── ...
-    │   │   └── P0019_RGB.tif
-    │   └── ndsm
-    │       ├── P0011_nDSM.tif
+    │   │   └── P0019.tif
+    │   └── sar
+    │   │   ├── P0011.tif
+    │   │   └── ...
+    │   │   └── P0019.tif
+    │   └── height
+    │       ├── P0011.tif
     │       └── ...
-    │       └── P0019_nDSM.tif
+    │       └── P0019.tif
     └── test
         └── rgb
-        │   ├── P0021_RGB.tif
+        │   ├── P0021.tif
         │   └── ...
-        │   └── P0029_RGB.tif
+        │   └── P0029.tif
+        └── sar
+        │   ├── P0021.tif
+        │   └── ...
+        │   └── P0029.tif
         └── ndsm
-            ├── P0021_nDSM.tif
+            ├── P0021.tif
             └── ...
-            └── P0029_nDSM.tif
+            └── P0029.tif
     ```
 ## Baselines
 
@@ -53,11 +65,11 @@ The topology of the submitted floder directory is as follows：
 
     ```
     DFC_Track_2_submit
-    ├── roof_fine_results.json
-    └── height_results
-        ├── P0011_Pred.tif
-        └── P0012_Pred.tif
+    ├── results.json
+    └── height
+        ├── P0011.tif
+        └── P0012.tif
         └── ...
-        └── P0019_Pred.tif
+        └── P0019.tif
     ```
 
