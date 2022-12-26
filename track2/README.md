@@ -57,7 +57,7 @@ The topology of the dataset directory is as follows：
         │   ├── P0021.tif
         │   └── ...
         │   └── P0029.tif
-        └── ndsm
+        └── height
             ├── P0021.tif
             └── ...
             └── P0029.tif
