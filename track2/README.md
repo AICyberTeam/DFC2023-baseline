@@ -70,7 +70,7 @@ The performance report of multimodal multitask learning (MML) framework on the v
 
 | Model      | Modality |  mAP  |  mAP_50  |  Delta_1  |  Delta_2  |  Delta_3  |
 | ---------- | -------- | :---: | :------: |  :-----:  |  :-----:  |  :-----:  |
-|    MML     | RGB+SAR  |  15.0 |   40.8   |   29.9    |   35.1    |    39.4   |
+|    MML     | RGB+SAR  |  15.1 |   41.1   |   30.1    |   35.3    |    39.6   |
 
 ## Submission Format
 The documents submitted should be a folder. 
