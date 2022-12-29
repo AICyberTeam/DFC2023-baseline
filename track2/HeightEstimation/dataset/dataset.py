@@ -164,7 +164,7 @@ class ISPRSDataSet(data.Dataset):
         image = np.asarray(image, np.float32)
         image -= self.mean
 
-        dsm = (dsm - 240.70033) / (360.0037 - 240.70033) + 0.0001
+        dsm = (dsm + 50) / (183.17412 + 50)
 
         img_h, img_w = label.shape
         pad_h = max(self.crop_h - img_h, 0)
@@ -250,13 +250,6 @@ class ISPRSDataValSet(data.Dataset):
         label = np.asarray(label, np.float32)
 
         dsm = np.asarray(dsm, np.float32)
-
-        # dsm_min = np.amin(label)
-        # dsm_max = np.amax(label)
-        # label -= dsm_min
-        # label = label / (dsm_max - dsm_min)
-        # dsm = (dsm + 5.49) / (204.147 + 5.49)
-        dsm = (dsm - 240.70033) / (360.0037 - 240.70033) + 0.0001
 
         image = image.transpose((2, 0, 1))
         dsm = dsm.transpose((2, 0, 1))
