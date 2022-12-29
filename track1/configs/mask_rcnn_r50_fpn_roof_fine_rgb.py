@@ -15,7 +15,7 @@ CLASSES = (
     "mansard_roof", 
     "pyramid_roof", 
     "arched_roof",
-    "dome",
+    "revolved",
     "other"
 )
 model = dict(
