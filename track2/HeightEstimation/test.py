@@ -89,6 +89,7 @@ def main():
                                             args.num_classes, True)
             else:
                 output = predict_sliding(model, image.numpy(), input_size, 1, True)
+        output = output * (183.17412 + 50) - 50
         seg_pred = output
         seg_pred = np.squeeze(seg_pred)
 
