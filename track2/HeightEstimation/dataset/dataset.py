@@ -56,7 +56,7 @@ class ISPRSDataSet(data.Dataset):
         image -= self.mean
 
         dsm = np.asarray(dsm, np.float32)
-        dsm = (dsm + 50) / (183.17412 + 50)
+        dsm = dsm / 183.17412
 
         img_h, img_w, _ = image.shape
         pad_h = max(self.crop_h - img_h, 0)
