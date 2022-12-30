@@ -8,18 +8,15 @@ def log10(x):
 
 class Result(object):
     def __init__(self):
-        self.mse, self.rmse, self.mae, self.rmselg10 = 0, 0, 0, 0
-        self.absrel, self.lg10 = 0, 0
+        self.mse, self.rmse, self.mae = 0, 0, 0
         self.delta1, self.delta2, self.delta3 = 0, 0, 0
 
     def set_to_worst(self):
-        self.mse, self.rmse, self.mae, self.rmselg10 = np.inf, np.inf, np.inf, np.inf
-        self.absrel, self.lg10 = np.inf, np.inf
+        self.mse, self.rmse, self.mae = np.inf, np.inf, np.inf
         self.delta1, self.delta2, self.delta3 = 0, 0, 0
 
-    def update(self, mse, rmse, mae, rmselg10, absrel, lg10, delta1, delta2, delta3):
-        self.mse, self.rmse, self.mae, self.rmselg10 = mse, rmse, mae, rmselg10
-        self.absrel, self.lg10 = absrel, lg10
+    def update(self, mse, rmse, mae, delta1, delta2, delta3):
+        self.mse, self.rmse, self.mae= mse, rmse, mae
         self.delta1, self.delta2, self.delta3 = delta1, delta2, delta3
 
 
@@ -37,13 +34,6 @@ class Result(object):
         self.rmse = np.sqrt((abs_diff ** 2).mean())
         self.mae = np.mean(abs_diff)
 
-        err = np.abs(np.log10(output) - np.log10(target))
-
-        self.rmselg10 = np.sqrt(np.mean(err ** 2))
-
-        self.lg10 = np.mean(err)
-        self.absrel = float((abs_diff / target).mean())
-
         maxRatio = np.maximum(output / target, target / output)
         self.delta1 = (maxRatio < 1.25).mean()
         self.delta2 = (maxRatio < 1.25 ** 2).mean()
@@ -56,9 +46,7 @@ class AverageMeter(object):
 
     def reset(self):
         self.count = 0.0
-
-        self.sum_mse, self.sum_rmse, self.sum_mae, self.sum_rmselg10 = 0, 0, 0, 0
-        self.sum_absrel, self.sum_lg10 = 0, 0
+        self.sum_mse, self.sum_rmse, self.sum_mae = 0, 0, 0
         self.sum_delta1, self.sum_delta2, self.sum_delta3 = 0, 0, 0
 
     def update(self, result, n=1):
@@ -66,9 +54,6 @@ class AverageMeter(object):
         self.sum_mse += n*result.mse
         self.sum_rmse += n*result.rmse
         self.sum_mae += n*result.mae
-        self.sum_rmselg10 += n*result.rmselg10
-        self.sum_absrel += n*result.absrel
-        self.sum_lg10 += n*result.lg10
         self.sum_delta1 += n*result.delta1
         self.sum_delta2 += n*result.delta2
         self.sum_delta3 += n*result.delta3
@@ -76,9 +61,7 @@ class AverageMeter(object):
     def average(self):
         avg = Result()
         avg.update(
-            self.sum_mae / self.count, self.sum_rmselg10 / self.count,
-            self.sum_mse / self.count, self.sum_rmse / self.count,
-            self.sum_absrel / self.count, self.sum_lg10 / self.count,
+            self.sum_mae / self.count, self.sum_mse / self.count, self.sum_rmse / self.count,
             self.sum_delta1 / self.count, self.sum_delta2 / self.count, self.sum_delta3 / self.count)
 
         return avg
