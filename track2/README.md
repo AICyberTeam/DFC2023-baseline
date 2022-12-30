@@ -1,6 +1,6 @@
 # DFC 2023 Track 2 
 ## Introduction
-Track 2 is a multi task track for building instance segmentation and height prediction, focusing on detecting individual buildings, fine-grained classification of building roofs, and height information.
+Track 2 is a multi task track for building instance segmentation and height prediction, focusing on detecting individual buildings, building instance segmentation, and height information.
 This track has a large number of neighboring building clusters, which challenges the participants' ability to involve the algorithmic process.
 ## Dataset Format
 We provide individual RGB and SAR (Synthetic Aperture Radar) remote sensing images.
