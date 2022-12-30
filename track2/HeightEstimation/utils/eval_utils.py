@@ -7,53 +7,6 @@ from scipy import ndimage
 from torch.autograd import Variable
 
 
-def get_palette(num_cls):
-    """ Returns the color map for visualizing the segmentation mask.
-    Args:
-        num_cls: Number of classes
-    Returns:
-        The color map
-    """
-
-    n = num_cls
-    palette = [0] * (n * 3)
-    for j in range(0, n):
-        lab = j
-        palette[j * 3 + 0] = 0
-        palette[j * 3 + 1] = 0
-        palette[j * 3 + 2] = 0
-        i = 0
-        while lab:
-            palette[j * 3 + 0] |= (((lab >> 0) & 1) << (7 - i))
-            palette[j * 3 + 1] |= (((lab >> 1) & 1) << (7 - i))
-            palette[j * 3 + 2] |= (((lab >> 2) & 1) << (7 - i))
-            i += 1
-            lab >>= 3
-    return palette
-
-
-isprspalette = [
-    255, 255, 255,
-    0, 0, 255,
-    0, 255, 255,
-    0, 255, 0,
-    255, 255, 0,
-    255, 0, 0,
-]
-
-gfpallete = [
-    0, 255, 0,
-    0, 128, 0,
-    128, 128, 128,
-    255, 255, 255,
-    0, 0, 255,
-    255, 255, 0,
-    0, 255, 255,
-    255, 0, 255,
-    0, 0, 0,
-]
-
-
 def pad_image(img, target_size):
     """Pad an image up to the target size."""
     rows_missing = target_size[0] - img.shape[2]
@@ -88,20 +41,13 @@ def predict_sliding(net, image, tile_size, classes, flip_evaluation):
             tile_counter += 1
             with torch.no_grad():
                 padded_prediction = net(Variable(torch.from_numpy(padded_img)).cuda())
-                # padded_prediction = net(Variable(torch.from_numpy(padded_img), volatile=True).cuda())
-            # padded_prediction = net(Variable(torch.from_numpy(padded_img), volatile=True).cuda())  # PSP/ASPP
             if isinstance(padded_prediction, list):
                 padded_prediction = padded_prediction[0]
             padded_prediction = interp(padded_prediction).cpu().data[0].numpy().transpose(1, 2, 0)
             prediction = padded_prediction[0:img.shape[2], 0:img.shape[3], :]
             count_predictions[y1:y2, x1:x2] += 1
             full_probs[y1:y2, x1:x2] += prediction  # accumulate the predictions also in the overlapping regions
-
-    # average the predictions in the overlapping regions
     full_probs /= count_predictions
-    # visualize normalization Weights
-    # plt.imshow(np.mean(count_predictions, axis=2))
-    # plt.show()
     return full_probs
 
 
@@ -155,14 +101,11 @@ def predict_multiscale(net, image, tile_size, scales, classes, flip_evaluation):
     image = image.data
     N_, C_, H_, W_ = image.shape
     full_probs = np.zeros((H_, W_, classes))
-    # print('full_probs.shape',full_probs.shape)
     for scale in scales:
         scale = float(scale)
         print("Predicting image scaled by %f" % scale)
         scale_image = ndimage.zoom(image, (1.0, 1.0, scale, scale), order=1, prefilter=False)
-        # print('scale_image.shape',scale_image.shape)
         scaled_probs = predict_whole(net, scale_image, tile_size)
-        # print('scaled_probs.shape',scaled_probs.shape)
         if flip_evaluation == True:
             flip_scaled_probs = predict_whole(net, scale_image[:, :, :, ::-1].copy(), tile_size)
             scaled_probs = 0.5 * (scaled_probs + flip_scaled_probs[:, ::-1, :])
