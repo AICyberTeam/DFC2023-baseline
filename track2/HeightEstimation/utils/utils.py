@@ -3,7 +3,6 @@ import numpy as np
 import torch
 
 
-## ISPRS
 label_colours = [(255,255,255),
                  (0,0,255),
                  (0,255,255),
