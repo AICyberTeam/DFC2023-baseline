@@ -237,9 +237,7 @@ def eval(testloader, model, input_size):
     print('----------------------------------------------')
     print('[Eval]: DSM Estimate metrics:')
     print('==============================================')
-    print('MAE={average.mae:.3f},    RMSElg10={average.rmselg10:.3f}\n'
-          'MSE={average.mse:.3f},    RMSE={average.rmse:.3f}\n'
-          'ABSREL={average.absrel:.3f}, Lg10={average.lg10:.3f}\n'
+    print('MAE={average.mae:.3f},    MSE={average.mse:.3f},    RMSE={average.rmse:.3f}\n'
           'Delta1={average.delta1:.3f}, Delta2={average.delta2:.3f}, Delta3={average.delta3:.3f}'.format(average=avg))
     print('==============================================')
     print('----------------------------------------------')
