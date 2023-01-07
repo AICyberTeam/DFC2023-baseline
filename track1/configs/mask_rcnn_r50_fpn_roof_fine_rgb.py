@@ -72,7 +72,7 @@ data = dict(
         oversample_thr=0.3,
         dataset=dict(
         type=dataset_type,
-        ann_file=data_root + 'annotations/roof_fine_train_rgb.json',
+        ann_file=data_root + 'annotations/roof_fine_train.json',
         img_prefix=data_root + 'train/rgb/',
         pipeline=train_pipeline,
         classes=CLASSES
@@ -80,7 +80,7 @@ data = dict(
     ),
     val=dict(
         type=dataset_type,
-        ann_file=data_root + 'annotations/roof_fine_val_rgb.json',
+        ann_file=data_root + 'annotations/roof_fine_val.json',
         img_prefix=data_root + 'val/rgb/',
         pipeline=test_pipeline,
         classes=CLASSES),
