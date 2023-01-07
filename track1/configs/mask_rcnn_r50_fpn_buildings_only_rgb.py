@@ -75,8 +75,8 @@ data = dict(
         classes=CLASSES),
     test=dict(
         type=dataset_type,
-        ann_file=data_root + 'image_id/image_id_test.json',
-        img_prefix=data_root + 'test/rgb/',
+        ann_file=data_root + 'image_id/image_id_val.json',
+        img_prefix=data_root + 'val/rgb/',
         pipeline=test_pipeline,
         classes=CLASSES))
 
