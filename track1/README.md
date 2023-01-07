@@ -95,3 +95,9 @@ python tools/test.py \
        --format-only \
        --eval-options "jsonfile_prefix=./results"
 ```
+To train the baseline models using MMDetection, you can run the following command:
+```
+python tools/train.py $CONFIG --work-dir $CHECKPOINT_DIR
+```
+We recommend to read the MMDetection [document](https://mmdetection.readthedocs.io/en/latest/) for more details.
+
