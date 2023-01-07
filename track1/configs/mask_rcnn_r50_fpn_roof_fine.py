@@ -87,8 +87,8 @@ data = dict(
         classes=CLASSES),
     test=dict(
         type=dataset_type,
-        ann_file=data_root + 'image_id/image_id_test.json',
-        img_prefix=data_root + 'test/merge/',
+        ann_file=data_root + 'image_id/image_id_val.json',
+        img_prefix=data_root + 'val/merge/',
         pipeline=test_pipeline,
         classes=CLASSES))
 
