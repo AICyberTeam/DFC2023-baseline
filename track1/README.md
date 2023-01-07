@@ -103,11 +103,5 @@ We recommend to read the MMDetection [document](https://mmdetection.readthedocs.
 
 ## Issues
 1. Since mmdetection do not support multi-channel tif format, you might need to modify line 68 in the mmdet/datasets/pipelines/loading.py
-replace 
-```
-img = mmcv.imfrombytes(img_bytes, flag=self.color_type, channel_order=self.channel_order)
-```
-with
-```
-img = mmcv.imfrombytes(img_bytes, flag=self.color_type, channel_order=self.channel_order, backend='tifffile')
-```
+replace ```img = mmcv.imfrombytes(img_bytes, flag=self.color_type, channel_order=self.channel_order)```
+with```img = mmcv.imfrombytes(img_bytes, flag=self.color_type, channel_order=self.channel_order, backend='tifffile')```
