@@ -78,7 +78,7 @@ The topology of the submitted floder directory is as follows：
 
     ```
     DFC_Track_2_submit
-    ├── results.json
+    ├── seg_results.json
     └── height
         ├── P0011.tif
         └── P0012.tif
