@@ -77,7 +77,7 @@ The documents submitted should be a folder.
 The topology of the submitted floder directory is as follows：
 
     ```
-    DFC_Track_2_submit
+    DFC2023_Track_2_submit
     ├── seg_results.json
     └── height
         ├── P0011.tif
