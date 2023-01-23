@@ -66,11 +66,11 @@ The topology of the dataset directory is as follows：
 ## Baselines
 We choose the classical mask rcnn with multimodal multitask learning (height prediction) framework as the contest baseline model. Among the input image modalities are RGB and SAR.
 We use [MMDetection](https://github.com/open-mmlab/mmdetection) (version 2.25.1) to test the baseline model performance. \
-The performance report of multimodal multitask learning (MML) framework on the validation set of track 2 (instance segmentation and height prediction) is as follows:
+The performance report of multimodal multitask learning framework on the validation set of track 2 (instance segmentation and height prediction) is as follows:
 
-| Model      | Modality |  mAP  |  mAP_50  |  Delta_1  |  Delta_2  |  Delta_3  |
-| ---------- | -------- | :---: | :------: |  :-----:  |  :-----:  |  :-----:  |
-|    MML     | RGB+SAR  |  15.1 |   41.1   |   30.1    |   35.3    |    39.6   |
+| Model         | Modality |  mAP  |  mAP_50  |  Delta_1  |  Delta_2  |  Delta_3  |
+| ------------- | -------- | :---: | :------: |  :-----:  |  :-----:  |  :-----:  |
+|    our baseline     | RGB+SAR  |  15.1 |   41.1   |   30.1    |   35.3    |    39.6   |
 
 ## Submission Format
 The documents submitted should be a folder. 
